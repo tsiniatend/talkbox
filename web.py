@@ -1,8 +1,7 @@
 import gradio as gr # Importing the Gradio library for creating interfaces
 import openai, config, subprocess # Importing OpenAI, config, and subprocess libraries
 # openai.api_key = config.OPENAI_API_KEY Setting the OpenAI API key
-from config import OpenAIConfig
-openai.api_key = OpenAIConfig.API
+from config import OpenAIConfig; openai.api_key = OpenAIConfig.API
 
 
 # Create a list of messages, initially containing a system message with instructions for the user
