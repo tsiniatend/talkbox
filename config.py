@@ -3,5 +3,5 @@
 # "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"
 import os
 
-class Config:
-  OPENAI_API_KEY = os.environ.get('OPENAI_API_KEY')
+class OpenAIConfig:
+ API = os.environ.get('API')
