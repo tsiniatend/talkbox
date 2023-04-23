@@ -1,8 +1,19 @@
-import gradio as gr # Importing the Gradio library for creating interfaces
-import openai, config, subprocess # Importing OpenAI, config, and subprocess libraries
-# openai.api_key = config.OPENAI_API_KEY Setting the OpenAI API key
-from config import OpenAIConfig; openai.api_key = OpenAIConfig.API
+import gradio as gr
+import subprocess
+import config
+from config import OpenAIConfig
 
+import openai
+
+
+openai.api_key = OpenAIConfig.OPENAI_API_KEY
+
+
+print("OpenAI API key:", openai.api_key)
+
+if not openai.api_key:
+    print("Error: OpenAI API key not found in environment variables or config.py file")
+    exit(1)
 
 # Create a list of messages, initially containing a system message with instructions for the user
 messages = [{"role": "system", "content": 'genius application developer able to easily and shortly explain web problems. Limit response by 20 words.'}]
